@@ -10,12 +10,13 @@ body {
   color: #333;
 }
 
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 18px 60px;
-  position: static;
+  position: sticky;
   top: 0;
   background: #fff;
 }
@@ -27,13 +28,13 @@ body {
 nav a {
   margin-left: 30px;
   text-decoration: none;
-  color: #32289b;
+  color: #b8892e;
   font-weight: 500;
-  font-size: large;
 }
 
-.main {
-  height: 50vh;
+/* HERO */
+.hero {
+  height: 90vh;
   background: linear-gradient(to right, #ffe4ea, #fff);
   display: flex;
   flex-direction: column;
@@ -41,18 +42,18 @@ nav a {
   padding-left: 80px;
 }
 
-.main h1 {
+.hero h1 {
   font-family: "Playfair Display", serif;
   font-size: 56px;
   color: #b8892e;
 }
 
-.mian p {
+.hero p {
   margin: 15px 0;
   font-size: 18px;
 }
 
-.main button {
+.hero button {
   width: 200px;
   padding: 12px;
   border: none;
@@ -61,4 +62,36 @@ nav a {
   font-size: 16px;
   border-radius: 30px;
   cursor: pointer;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 60px;
+  text-align: center;
+}
+
+section h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 38px;
+  color: #b8892e;
+  margin-bottom: 20px;
+}
+
+/* COLLECTION */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 250px;
+  height: 180px;
+  background: #fff5f8;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
 }
