@@ -1,0 +1,27 @@
+
+<svg width="500" height="140" viewBox="0 0 500 140" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="goldLuxury" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#f8d98a"/>
+      <stop offset="50%" stop-color="#d4a14a"/>
+      <stop offset="100%" stop-color="#b8892e"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Icon -->
+  <rect x="20" y="30" rx="22" ry="22" width="80" height="80" fill="#ffb6c1"/>
+  <path d="M60 85
+           C55 70, 65 55, 80 55
+           C95 55, 100 70, 90 80
+           C82 90, 70 95, 60 85Z"
+        fill="url(#goldLuxury)"/>
+
+  <!-- Brand Text -->
+  <text x="120" y="95"
+        font-family="Playfair Display, serif"
+        font-size="64"
+        fill="url(#goldLuxury)"
+        letter-spacing="1">
+    Aurella
+  </text>
+</svg>
