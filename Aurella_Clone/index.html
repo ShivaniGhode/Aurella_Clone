@@ -55,6 +55,39 @@
       </div>
     </section>
 
+    <!--Shopping Cart-->
+    <section class="cart-section" id="cart">
+      <h2>Shopping Cart</h2>
+
+      <div class="products">
+        <div class="product">
+          <h3>Elegance Wear</h3>
+          <p>₹3,499</p>
+          <button onclick="addToCart('Elegance Wear', 3499)">
+            Add to Cart
+          </button>
+        </div>
+        <div class="product">
+          <h3>Golden Touch</h3>
+          <p>₹4,999</p>
+          <button onclick="addToCart('Golden Touch', 4999)">Add to Cart</button>
+        </div>
+        <div class="product">
+          <h3>Royal Classics</h3>
+          <p>₹6,499</p>
+          <button onclick="addToCart('Royal Classics', 6499)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+
+      <div class="cart-box">
+        <h3>Your Cart</h3>
+        <ul id="cart-items"></ul>
+        <p class="total">Total: ₹<span id="total">0</span></p>
+        <button class="checkout" onclick="checkout()">Checkout</button>
+      </div>
+    </section>
     <!-- GUIDE -->
     <section id="guide">
       <h2>Luxury Style Guide</h2>

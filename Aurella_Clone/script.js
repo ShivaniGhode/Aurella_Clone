@@ -1,6 +1,6 @@
+/*  PAGE LOAD EFFECTS  */
 document.addEventListener("DOMContentLoaded", () => {
-
-  /* ===== FORM SUBMIT ===== */
+  /*  FORM SUBMIT  */
   document.querySelectorAll("form").forEach((form) => {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ===== SCROLL ANIMATION ===== */
+  /*  SCROLL ANIMATION  */
   const sections = document.querySelectorAll("section");
 
   sections.forEach((section) => {
@@ -27,11 +27,77 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  /* ===== ADD TO CART ===== */
-  document.querySelectorAll(".product-card button").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      alert("✨ Added to cart successfully!");
-    });
+  updateCart(); // load cart on refresh
+});
+
+/*  CART DATA  */
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+/* ADD TO CART  */
+function addToCart(name, price) {
+  const existingItem = cart.find((item) => item.name === name);
+
+  if (existingItem) {
+    existingItem.qty += 1;
+  } else {
+    cart.push({ name, price, qty: 1 });
+  }
+
+  saveCart();
+  updateCart();
+}
+
+/*  REMOVE ITEM  */
+function removeItem(index) {
+  cart.splice(index, 1);
+  saveCart();
+  updateCart();
+}
+
+/*  UPDATE CART UI  */
+function updateCart() {
+  const cartItems = document.getElementById("cart-items");
+  const totalEl = document.getElementById("total");
+
+  if (!cartItems || !totalEl) return;
+
+  cartItems.innerHTML = "";
+  let total = 0;
+
+  cart.forEach((item, index) => {
+    total += item.price * item.qty;
+
+    const li = document.createElement("li");
+    li.innerHTML = `
+      <span>${item.name} × ${item.qty}</span>
+      <span>
+        ₹${item.price * item.qty}
+        <button onclick="removeItem(${index})"
+          style="margin-left:8px;border:none;background:none;color:red;cursor:pointer;">
+          ✕
+        </button>
+      </span>
+    `;
+    cartItems.appendChild(li);
   });
 
-});
+  totalEl.textContent = total;
+}
+
+/*  SAVE CART */
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
+/*  CHECKOUT  */
+function checkout() {
+  if (cart.length === 0) {
+    alert("Your cart is empty!");
+    return;
+  }
+
+  alert("Thank you for shopping with Aurella ✨");
+  cart = [];
+  saveCart();
+  updateCart();
+}
