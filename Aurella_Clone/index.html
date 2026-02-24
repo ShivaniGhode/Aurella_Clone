@@ -17,7 +17,8 @@
       <div class="logo">
         <img src="aurella_logo_custom.svg" alt="Aurella Luxury Logo" />
       </div>
-      <nav>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
+      <nav id="navLinks">
         <a href="#about">About</a>
         <a href="product.html">Products</a>
         <a href="#collection">Collections</a>
@@ -29,14 +30,14 @@
     </header>
 
     <!-- HERO / MAIN -->
-    <section class="main">
+    <section class="main reveal">
       <h1>Where Luxury Meets Elegance</h1>
       <p>Discover timeless beauty crafted with golden grace.</p>
       <a href="product.html" class="main- btn">Explore Collection</a>
     </section>
 
     <!-- ABOUT -->
-    <section id="about">
+    <section id="about" class="about reveal">
       <h2>About Aurella</h2>
       <p>
         Aurella is a luxury brand inspired by elegance, femininity, and golden
@@ -46,12 +47,12 @@
     </section>
 
     <!-- COLLECTION -->
-    <section id="collection">
+    <section id="collection" class="collection reveal">
       <h2>Our Luxury Collections</h2>
       <div class="cards">
-        <div class="card">Elegance Wear</div>
-        <div class="card">Golden Touch</div>
-        <div class="card">Royal Classics</div>
+        <div class="card reveal slide-left">Elegance Wear</div>
+        <div class="card reveal">Golden Touch</div>
+        <div class="card reveal slide-right">Royal Classics</div>
       </div>
     </section>
 
@@ -89,7 +90,7 @@
       </div>
     </section>
     <!-- GUIDE -->
-    <section id="guide">
+    <section id="guide" class="guide reveal">
       <h2>Luxury Style Guide</h2>
       <p>
         Choose minimal accessories, soft tones, and elegant silhouettes to
@@ -98,7 +99,7 @@
     </section>
 
     <!-- STORE -->
-    <section id="store">
+    <section id="store" class="store reveal">
       <h2>Visit Our Store</h2>
       <p>
         Online luxury boutique available 24/7.<br />

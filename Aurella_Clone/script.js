@@ -101,3 +101,26 @@ function checkout() {
   saveCart();
   updateCart();
 }
+function toggleMenu() {
+  const nav = document.getElementById("navLinks");
+  nav.style.display = nav.style.display === "block" ? "none" : "block";
+}
+
+// scroll reveal
+function revealOnScroll() {
+  const reveals = document
+    .querySelectorAll(".reveal")
+
+    .reveals.forEach((element) => {
+      const windowHeight = window.innerHeight;
+      const elementTop = element.getBoundingClientRect().top;
+      const revealPoint = 120;
+
+      if (elementTop < windowHeight - revealPoint) {
+        element.classList.add("active");
+      }
+    });
+}
+
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
