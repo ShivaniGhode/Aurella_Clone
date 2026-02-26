@@ -426,3 +426,18 @@ section h2 {
 .slide-right.active {
   transform: translateX(0);
 }
+
+.search-section {
+  text-align: center;
+  margin: 40px 0;
+}
+
+.search-section input {
+  width: 70%;
+  max-width: 500px;
+  padding: 14px 20px;
+  border-radius: 30px;
+  border: 1px solid #d4a14a;
+  font-size: 16px;
+  outline: none;
+}

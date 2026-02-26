@@ -124,3 +124,22 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+
+function searchProduct() {
+  let input = document.getElementById("searchInput").ariaValueMax.toLowerCase();
+  let products = document.querySelectorAll(".product-card");
+
+  products.forEach((product) => {
+    let name = product.getAttribute("data-name");
+
+    if (name.includes(input)) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+}
+
+function changeImage(imgId, newSrc) {
+  document.getElementById(imgId).src = newSrc;
+}

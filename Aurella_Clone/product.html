@@ -27,6 +27,14 @@
       <p>Luxury beauty, fashion & elegance – all in one place</p>
     </section>
 
+    <!-- Search bar-->
+    <section class="search-section">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search by Keyword or Product ID"
+        onkeyup="searchProducts()" />
+    </section>
     <!-- BEAUTY -->
     <section id="beauty">
       <h2>Beauty, Skincare & Makeup</h2>
@@ -53,7 +61,32 @@
         </div>
       </div>
     </section>
+    <div class="product-card" data-name="lipstick red pink nude maroon makeup">
+      <img src="./Pro-imgs/lipstick.jpg" id="lipstickImg" />
 
+      <h3>Luxury Lipstick</h3>
+      <p>₹699</p>
+
+      <div class="variants">
+        <span
+          class="color red"
+          onclick="
+            changeImage('lipstickImg', './Pro-imgs/lipstick-red.jpg')
+          "></span>
+        <span
+          class="color pink"
+          onclick="
+            changeImage('lipstickImg', './Pro-imgs/lipstick-pink.jpg')
+          "></span>
+        <span
+          class="color nude"
+          onclick="
+            changeImage('lipstickImg', './Pro-imgs/lipstick-nude.jpg')
+          "></span>
+      </div>
+
+      <button>Add to Cart</button>
+    </div>
     <!-- FASHION -->
     <section id="fashion">
       <h2>Traditional, Party & Professional Wear</h2>
@@ -62,9 +95,19 @@
           <img src="./Pro-imgs/Designer Saree.webp" alt="Designer Saree" />
           <h3>Designer Saree</h3>
           <p>₹6,999</p>
+          <div class="variant-links">
+            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-red.jpg')"
+              >Red</a
+            >
+            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-blue.jpg')"
+              >Blue</a
+            >
+            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-green.jpg')"
+              >Green</a
+            >
+          </div>
           <button>Add to Cart</button>
         </div>
-
         <div class="product-card">
           <img src="./Pro-imgs/Party Gown.webp" alt="Party Gown" />
           <h3>Party Gown</h3>
@@ -89,6 +132,17 @@
           <img src="./Pro-imgs/Gold Necklace.jpg" alt="Gold Necklace" />
           <h3>Gold Necklace</h3>
           <p>₹4,999</p>
+          <div class="variant-links">
+            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-red.jpg')"
+              >Red</a
+            >
+            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-blue.jpg')"
+              >Blue</a
+            >
+            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-green.jpg')"
+              >Green</a
+            >
+          </div>
           <button>Add to Cart</button>
         </div>
 

@@ -3,12 +3,16 @@
     "development"
   ],
   "hints": {
-    "meta-viewport": "off",
-    "button-type": "off",
-    "axe/name-role-value": [
+    "axe/forms": [
       "default",
       {
-        "button-name": "off"
+        "label": "off"
+      }
+    ],
+    "axe/text-alternatives": [
+      "default",
+      {
+        "image-alt": "off"
       }
     ]
   }
