@@ -264,6 +264,7 @@ section h2 {
   text-align: center;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
   transition: transform 0.4s ease;
+  position: relative;
 }
 
 .product-card:hover {
@@ -286,6 +287,78 @@ section h2 {
 .product-card p {
   font-size: 16px;
   color: #b8892e;
+}
+
+.wishlist {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.wishlist.active {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+.variants {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px 0;
+}
+
+.color {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 1px solid #ccc;
+}
+
+.color:hover {
+  transform: scale(1.2);
+  border-color: #000;
+}
+.red {
+  background: #b30000;
+}
+.pink {
+  background: #ff69b4;
+}
+.nude {
+  background: #d2b48c;
+}
+
+.size-selector {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin: 10px 0;
+}
+
+.size {
+  padding: 6px 12px;
+  border: 1px solid #000;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.size:hover,
+.size.active {
+  background: #000;
+  color: #fff;
+}
+
+@media (max-width: 600px) {
+  .size {
+    padding: 6px 10px;
+    font-size: 12px;
+  }
 }
 
 .product-card button {

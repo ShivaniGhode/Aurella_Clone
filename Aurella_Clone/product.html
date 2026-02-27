@@ -27,136 +27,131 @@
       <p>Luxury beauty, fashion & elegance – all in one place</p>
     </section>
 
-    <!-- Search bar-->
-    <section class="search-section">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search by Keyword or Product ID"
-        onkeyup="searchProducts()" />
-    </section>
     <!-- BEAUTY -->
     <section id="beauty">
       <h2>Beauty, Skincare & Makeup</h2>
+
       <div class="product-grid">
+        <!-- SERUM -->
         <div class="product-card">
-          <img src="./Pro-imgs/serum.avif" alt="Glow Face Serum" />
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+          <img src="./Pro-imgs/serum.avif" />
           <h3>Glow Face Serum</h3>
           <p>₹499</p>
           <button>Add to Cart</button>
         </div>
 
+        <!-- FOUNDATION -->
         <div class="product-card">
-          <img src="./Pro-imgs/Foundation.jpg" alt="Foundation" />
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+          <img src="./Pro-imgs/Foundation.jpg" />
           <h3>Foundation</h3>
           <p>₹1,099</p>
           <button>Add to Cart</button>
         </div>
 
+        <!-- MAKEUP PALETTE -->
         <div class="product-card">
-          <img src="./Pro-imgs/Makeup Palette.webp" alt="Makeup Palette" />
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+          <img src="./Pro-imgs/Makeup Palette.webp" />
           <h3>Makeup Palette</h3>
           <p>₹1,299</p>
           <button>Add to Cart</button>
         </div>
+
+        <!-- ✅ LIPSTICK (FIXED) -->
+        <div class="product-card">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <img src="./Pro-imgs/lipstick-red.jpg" id="lipstickImg" />
+
+          <h3>Luxury Lipstick</h3>
+
+          <p>₹<span id="lipstickPrice">699</span></p>
+
+          <!-- Color + Price -->
+          <div class="variants">
+            <span
+              class="color red"
+              onclick="
+                changeVariant(
+                  'lipstickImg',
+                  699,
+                  'lipstickPrice',
+                  './Pro-imgs/lipstick-red.jpg',
+                )
+              "></span>
+
+            <span
+              class="color pink"
+              onclick="
+                changeVariant(
+                  'lipstickImg',
+                  749,
+                  'lipstickPrice',
+                  './Pro-imgs/lipstick-pink.jpg',
+                )
+              "></span>
+
+            <span
+              class="color nude"
+              onclick="
+                changeVariant(
+                  'lipstickImg',
+                  799,
+                  'lipstickPrice',
+                  './Pro-imgs/lipstick-nude.jpg',
+                )
+              "></span>
+          </div>
+
+          <button>Add to Cart</button>
+        </div>
       </div>
     </section>
-    <div class="product-card" data-name="lipstick red pink nude maroon makeup">
-      <img src="./Pro-imgs/lipstick.jpg" id="lipstickImg" />
 
-      <h3>Luxury Lipstick</h3>
-      <p>₹699</p>
-
-      <div class="variants">
-        <span
-          class="color red"
-          onclick="
-            changeImage('lipstickImg', './Pro-imgs/lipstick-red.jpg')
-          "></span>
-        <span
-          class="color pink"
-          onclick="
-            changeImage('lipstickImg', './Pro-imgs/lipstick-pink.jpg')
-          "></span>
-        <span
-          class="color nude"
-          onclick="
-            changeImage('lipstickImg', './Pro-imgs/lipstick-nude.jpg')
-          "></span>
-      </div>
-
-      <button>Add to Cart</button>
-    </div>
     <!-- FASHION -->
     <section id="fashion">
       <h2>Traditional, Party & Professional Wear</h2>
+
       <div class="product-grid">
+        <!-- PARTY GOWN -->
         <div class="product-card">
-          <img src="./Pro-imgs/Designer Saree.webp" alt="Designer Saree" />
-          <h3>Designer Saree</h3>
-          <p>₹6,999</p>
-          <div class="variant-links">
-            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-red.jpg')"
-              >Red</a
-            >
-            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-blue.jpg')"
-              >Blue</a
-            >
-            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-green.jpg')"
-              >Green</a
-            >
-          </div>
-          <button>Add to Cart</button>
-        </div>
-        <div class="product-card">
-          <img src="./Pro-imgs/Party Gown.webp" alt="Party Gown" />
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+          <img src="./Pro-imgs/Party Gown.webp" />
           <h3>Party Gown</h3>
           <p>₹5,999</p>
+
+          <div class="size-selector">
+            <span class="size" onclick="selectSize(this)">SS</span>
+            <span class="size" onclick="selectSize(this)">S</span>
+            <span class="size" onclick="selectSize(this)">M</span>
+            <span class="size" onclick="selectSize(this)">L</span>
+            <span class="size" onclick="selectSize(this)">XL</span>
+            <span class="size" onclick="selectSize(this)">XXXL</span>
+          </div>
+
+          <p class="selected-size">Size: <b>Not Selected</b></p>
           <button>Add to Cart</button>
         </div>
 
+        <!-- BLAZER -->
         <div class="product-card">
-          <img src="./Pro-imgs/Formal Blazer.jpg" alt="Formal Blazer" />
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+          <img src="./Pro-imgs/Formal Blazer.jpg" />
           <h3>Formal Blazer</h3>
           <p>₹3,499</p>
-          <button>Add to Cart</button>
-        </div>
-      </div>
-    </section>
 
-    <!-- ACCESSORIES -->
-    <section id="accessories">
-      <h2>Jewellery, Bags & Footwear</h2>
-      <div class="product-grid">
-        <div class="product-card">
-          <img src="./Pro-imgs/Gold Necklace.jpg" alt="Gold Necklace" />
-          <h3>Gold Necklace</h3>
-          <p>₹4,999</p>
-          <div class="variant-links">
-            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-red.jpg')"
-              >Red</a
-            >
-            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-blue.jpg')"
-              >Blue</a
-            >
-            <a onclick="changeImage('sareeImg', './Pro-imgs/saree-green.jpg')"
-              >Green</a
-            >
+          <div class="size-selector">
+            <span class="size" onclick="selectSize(this)">SS</span>
+            <span class="size" onclick="selectSize(this)">S</span>
+            <span class="size" onclick="selectSize(this)">M</span>
+            <span class="size" onclick="selectSize(this)">L</span>
+            <span class="size" onclick="selectSize(this)">XL</span>
+            <span class="size" onclick="selectSize(this)">XXXL</span>
           </div>
-          <button>Add to Cart</button>
-        </div>
 
-        <div class="product-card">
-          <img src="./Pro-imgs/Designer Saree.webp" alt="Designer Handbag" />
-          <h3>Designer Handbag</h3>
-          <p>₹3,999</p>
-          <button>Add to Cart</button>
-        </div>
-
-        <div class="product-card">
-          <img src="./Pro-imgs/Luxury Heels.webp" alt="Luxury Heels" />
-          <h3>Luxury Heels</h3>
-          <p>₹2,499</p>
+          <p class="selected-size">Size: <b>Not Selected</b></p>
           <button>Add to Cart</button>
         </div>
       </div>
