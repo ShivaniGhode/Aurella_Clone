@@ -3,163 +3,325 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
     <title>Aurella | All Products</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
   <body>
-    <!-- NAVBAR -->
     <header class="navbar">
       <div class="logo">
-        <img src="./aurella_logo_custom.svg" alt="Aurella Luxury Logo" />
+        <a href="index.html">
+          <img src="./aurella_logo_custom.svg" />
+        </a>
       </div>
+
       <nav>
         <a href="index.html">Home</a>
         <a href="#beauty">Beauty</a>
+        <a href="#skincare">Skincare</a>
+        <a href="#haircare">Haircare</a>
         <a href="#fashion">Fashion</a>
+        <a href="#jewellery">Jewellery</a>
         <a href="#accessories">Accessories</a>
+
+        <div class="cart-icon" onclick="openCart()">
+          🛒 <span id="cart-count">0</span>
+        </div>
+
+        <a href="login.html">Login</a>
       </nav>
     </header>
 
-    <!-- HERO -->
     <section class="product-main">
       <h1>Everything She Deserves ✨</h1>
-      <p>Luxury beauty, fashion & elegance – all in one place</p>
+      <p>Beauty • Fashion • Elegance</p>
+    </section>
+
+    <section class="search-section">
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search products..."
+        onkeyup="searchProducts()" />
+    </section>
+
+    <section class="filter">
+      <select id="categoryFilter" onchange="filterProducts()">
+        <option value="all">All Categories</option>
+        <option value="beauty">Beauty</option>
+        <option value="skincare">Skincare</option>
+        <option value="haircare">Haircare</option>
+        <option value="fashion">Fashion</option>
+        <option value="jewellery">Jewellery</option>
+        <option value="accessories">Accessories</option>
+      </select>
+
+      <select id="priceFilter" onchange="filterProducts()">
+        <option value="all">All Prices</option>
+        <option value="500">Below ₹500</option>
+        <option value="1000">Below ₹1000</option>
+        <option value="3000">Below ₹3000</option>
+      </select>
     </section>
 
     <!-- BEAUTY -->
+
     <section id="beauty">
-      <h2>Beauty, Skincare & Makeup</h2>
+      <h2>Beauty Products</h2>
 
       <div class="product-grid">
-        <!-- SERUM -->
-        <div class="product-card">
+        <div
+          class="product-card"
+          data-name="lipstick"
+          data-category="beauty"
+          data-price="699">
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
-          <img src="./Pro-imgs/serum.avif" />
-          <h3>Glow Face Serum</h3>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/lipstick-red.jpg" />
+            <h3>Luxury Lipstick</h3>
+          </a>
+
+          <p>₹699</p>
+
+          <button onclick="addToCart('Luxury Lipstick', 699)">
+            Add to Cart
+          </button>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="foundation"
+          data-category="beauty"
+          data-price="1099">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/Foundation.jpg" />
+            <h3>Foundation</h3>
+          </a>
+
+          <p>₹1099</p>
+
+          <button onclick="addToCart('Foundation', 1099)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKINCARE -->
+
+    <section id="skincare">
+      <h2>Skincare</h2>
+
+      <div class="product-grid">
+        <div
+          class="product-card"
+          data-name="face serum"
+          data-category="skincare"
+          data-price="499">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/serum.avif" />
+            <h3>Glow Face Serum</h3>
+          </a>
+
           <p>₹499</p>
-          <button>Add to Cart</button>
+
+          <button onclick="addToCart('Face Serum', 499)">Add to Cart</button>
         </div>
 
-        <!-- FOUNDATION -->
-        <div class="product-card">
+        <div
+          class="product-card"
+          data-name="face wash"
+          data-category="skincare"
+          data-price="399">
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
-          <img src="./Pro-imgs/Foundation.jpg" />
-          <h3>Foundation</h3>
-          <p>₹1,099</p>
-          <button>Add to Cart</button>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/facewash.jpg" />
+            <h3>Hydrating Face Wash</h3>
+          </a>
+
+          <p>₹399</p>
+
+          <button onclick="addToCart('Face Wash', 399)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- HAIRCARE -->
+
+    <section id="haircare">
+      <h2>Haircare</h2>
+
+      <div class="product-grid">
+        <div
+          class="product-card"
+          data-name="hair oil"
+          data-category="haircare"
+          data-price="499">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/hairoil.jpg" />
+            <h3>Herbal Hair Oil</h3>
+          </a>
+
+          <p>₹499</p>
+
+          <button onclick="addToCart('Hair Oil', 499)">Add to Cart</button>
         </div>
 
-        <!-- MAKEUP PALETTE -->
-        <div class="product-card">
-          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
-          <img src="./Pro-imgs/Makeup Palette.webp" />
-          <h3>Makeup Palette</h3>
-          <p>₹1,299</p>
-          <button>Add to Cart</button>
-        </div>
-
-        <!-- ✅ LIPSTICK (FIXED) -->
-        <div class="product-card">
+        <div
+          class="product-card"
+          data-name="shampoo"
+          data-category="haircare"
+          data-price="599">
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
-          <img src="./Pro-imgs/lipstick-red.jpg" id="lipstickImg" />
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/shampoo.jpg" />
+            <h3>Repair Shampoo</h3>
+          </a>
 
-          <h3>Luxury Lipstick</h3>
+          <p>₹599</p>
 
-          <p>₹<span id="lipstickPrice">699</span></p>
-
-          <!-- Color + Price -->
-          <div class="variants">
-            <span
-              class="color red"
-              onclick="
-                changeVariant(
-                  'lipstickImg',
-                  699,
-                  'lipstickPrice',
-                  './Pro-imgs/lipstick-red.jpg',
-                )
-              "></span>
-
-            <span
-              class="color pink"
-              onclick="
-                changeVariant(
-                  'lipstickImg',
-                  749,
-                  'lipstickPrice',
-                  './Pro-imgs/lipstick-pink.jpg',
-                )
-              "></span>
-
-            <span
-              class="color nude"
-              onclick="
-                changeVariant(
-                  'lipstickImg',
-                  799,
-                  'lipstickPrice',
-                  './Pro-imgs/lipstick-nude.jpg',
-                )
-              "></span>
-          </div>
-
-          <button>Add to Cart</button>
+          <button onclick="addToCart('Shampoo', 599)">Add to Cart</button>
         </div>
       </div>
     </section>
 
     <!-- FASHION -->
+
     <section id="fashion">
-      <h2>Traditional, Party & Professional Wear</h2>
+      <h2>Fashion Wear</h2>
 
       <div class="product-grid">
-        <!-- PARTY GOWN -->
-        <div class="product-card">
+        <div
+          class="product-card"
+          data-name="party gown"
+          data-category="fashion"
+          data-price="5999">
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
-          <img src="./Pro-imgs/Party Gown.webp" />
-          <h3>Party Gown</h3>
-          <p>₹5,999</p>
 
-          <div class="size-selector">
-            <span class="size" onclick="selectSize(this)">SS</span>
-            <span class="size" onclick="selectSize(this)">S</span>
-            <span class="size" onclick="selectSize(this)">M</span>
-            <span class="size" onclick="selectSize(this)">L</span>
-            <span class="size" onclick="selectSize(this)">XL</span>
-            <span class="size" onclick="selectSize(this)">XXXL</span>
-          </div>
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/Party Gown.webp" />
+            <h3>Party Gown</h3>
+          </a>
 
-          <p class="selected-size">Size: <b>Not Selected</b></p>
-          <button>Add to Cart</button>
+          <p>₹5999</p>
+
+          <button onclick="addToCart('Party Gown', 5999)">Add to Cart</button>
         </div>
 
-        <!-- BLAZER -->
-        <div class="product-card">
+        <div
+          class="product-card"
+          data-name="summer dress"
+          data-category="fashion"
+          data-price="2499">
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
-          <img src="./Pro-imgs/Formal Blazer.jpg" />
-          <h3>Formal Blazer</h3>
-          <p>₹3,499</p>
 
-          <div class="size-selector">
-            <span class="size" onclick="selectSize(this)">SS</span>
-            <span class="size" onclick="selectSize(this)">S</span>
-            <span class="size" onclick="selectSize(this)">M</span>
-            <span class="size" onclick="selectSize(this)">L</span>
-            <span class="size" onclick="selectSize(this)">XL</span>
-            <span class="size" onclick="selectSize(this)">XXXL</span>
-          </div>
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/summerdress.jpg" />
+            <h3>Summer Dress</h3>
+          </a>
 
-          <p class="selected-size">Size: <b>Not Selected</b></p>
-          <button>Add to Cart</button>
+          <p>₹2499</p>
+
+          <button onclick="addToCart('Summer Dress', 2499)">Add to Cart</button>
         </div>
       </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- JEWELLERY -->
+
+    <section id="jewellery">
+      <h2>Jewellery</h2>
+
+      <div class="product-grid">
+        <div
+          class="product-card"
+          data-name="necklace"
+          data-category="jewellery"
+          data-price="1999">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/necklace.jpg" />
+            <h3>Gold Necklace</h3>
+          </a>
+
+          <p>₹1999</p>
+
+          <button onclick="addToCart('Necklace', 1999)">Add to Cart</button>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="earrings"
+          data-category="jewellery"
+          data-price="999">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/earrings.jpg" />
+            <h3>Diamond Earrings</h3>
+          </a>
+
+          <p>₹999</p>
+
+          <button onclick="addToCart('Earrings', 999)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACCESSORIES -->
+
+    <section id="accessories">
+      <h2>Accessories</h2>
+
+      <div class="product-grid">
+        <div
+          class="product-card"
+          data-name="handbag"
+          data-category="accessories"
+          data-price="2499">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/handbag.jpg" />
+            <h3>Luxury Handbag</h3>
+          </a>
+
+          <p>₹2499</p>
+
+          <button onclick="addToCart('Handbag', 2499)">Add to Cart</button>
+        </div>
+
+        <div
+          class="product-card"
+          data-name="sunglasses"
+          data-category="accessories"
+          data-price="799">
+          <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
+
+          <a href="product-detail.html">
+            <img src="./Pro-imgs/sunglasses.jpg" />
+            <h3>Stylish Sunglasses</h3>
+          </a>
+
+          <p>₹799</p>
+
+          <button onclick="addToCart('Sunglasses', 799)">Add to Cart</button>
+        </div>
+      </div>
+    </section>
+
     <footer class="footer">
-      <p>© 2026 Aurella | Luxury for Every Woman</p>
+      <p>© 2026 Aurella | Luxury For Every Woman</p>
     </footer>
 
     <script src="script.js"></script>

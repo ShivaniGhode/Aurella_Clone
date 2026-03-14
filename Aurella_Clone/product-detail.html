@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Aurella Product</title>
+
+    <link rel="stylesheet" href="style.css" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins&display=swap"
+      rel="stylesheet" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="aurella_logo_custom.svg" />
+        </a>
+      </div>
+
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="product.html">Products</a>
+
+        <div class="cart-icon">
+          🛒
+          <span id="cart-count">0</span>
+        </div>
+      </nav>
+    </header>
+
+    <section class="product-detail">
+      <div class="product-detail-grid">
+        <div class="product-images">
+          <img id="mainImage" src="Pro-imgs/lipstick-red.jpg" />
+
+          <div class="thumbs">
+            <img
+              src="Pro-imgs/lipstick-red.jpg"
+              onclick="changeProductImage(this)" />
+
+            <img
+              src="Pro-imgs/lipstick-red.jpg"
+              onclick="changeProductImage(this)" />
+
+            <img
+              src="Pro-imgs/lipstick-red.jpg"
+              onclick="changeProductImage(this)" />
+          </div>
+        </div>
+
+        <div class="product-info">
+          <h1>Luxury Lipstick</h1>
+
+          <p class="price">₹699</p>
+
+          <p class="desc">
+            Premium long-lasting lipstick with rich color and smooth texture.
+            Perfect for daily elegance.
+          </p>
+
+          <button onclick="addToCart('Luxury Lipstick', 699)">
+            Add to Cart
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <p>© 2026 Aurella</p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
