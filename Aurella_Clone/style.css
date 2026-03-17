@@ -1,4 +1,4 @@
-/* ================= GLOBAL ================= */
+/*  GLOBAL  */
 
 * {
   margin: 0;
@@ -13,7 +13,7 @@ body {
   line-height: 1.6;
 }
 
-/* ================= NAVBAR ================= */
+/*  NAVBAR */
 
 .navbar {
   display: flex;
@@ -48,7 +48,7 @@ nav a:hover {
   color: #d4a14a;
 }
 
-/* ================= HERO ================= */
+/*  HERO  */
 
 .product-main {
   min-height: 40vh;
@@ -71,24 +71,56 @@ nav a:hover {
   margin-top: 10px;
 }
 
-/* ================= SEARCH ================= */
+/*  SEARCH  */
 
-.search-section {
-  text-align: center;
-  margin: 40px 0;
+.suggestions {
+  position: absolute;
+  width: 100%;
+  background: #fff;
+  border: 1px solid #ddd;
+  max-height: 300px;
+  overflow-y: auto;
+  display: none;
+  z-index: 1000;
 }
 
-.search-section input {
-  width: 70%;
-  max-width: 500px;
-  padding: 14px 20px;
-  border-radius: 30px;
-  border: 1px solid #d4a14a;
-  font-size: 16px;
-  outline: none;
+.suggestion-item {
+  display: flex;
+  gap: 10px;
+  padding: 10px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
 }
 
-/* ================= FILTER ================= */
+.suggestion-item img {
+  width: 45px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.suggestion-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.price {
+  color: green;
+  font-size: 14px;
+}
+
+.rating {
+  color: orange;
+  font-size: 13px;
+}
+
+.trending-title {
+  font-weight: bold;
+  padding: 8px;
+  background: #fafafa;
+}
+
+/*  FILTER  */
 
 .filter {
   display: flex;
@@ -104,7 +136,7 @@ nav a:hover {
   border: 1px solid #ccc;
 }
 
-/* ================= SECTION ================= */
+/*  SECTION  */
 
 section {
   padding: 80px 60px;
@@ -118,7 +150,7 @@ section h2 {
   margin-bottom: 30px;
 }
 
-/* ================= PRODUCT GRID ================= */
+/*  PRODUCT GRID  */
 
 .product-grid {
   display: grid;
@@ -128,7 +160,7 @@ section h2 {
   margin: auto;
 }
 
-/* ================= PRODUCT CARD ================= */
+/*  PRODUCT CARD  */
 
 .product-card {
   background: #fff;
@@ -170,7 +202,7 @@ section h2 {
   color: inherit;
 }
 
-/* ================= BUTTON ================= */
+/*  BUTTON  */
 
 .product-card button {
   margin: 15px 0;
@@ -188,7 +220,7 @@ section h2 {
   transform: scale(1.05);
 }
 
-/* ================= WISHLIST ================= */
+/*  WISHLIST  */
 
 .wishlist {
   position: absolute;
@@ -206,7 +238,7 @@ section h2 {
   color: red;
 }
 
-/* ================= CART ================= */
+/* CART  */
 
 .cart-icon {
   position: relative;
@@ -226,7 +258,7 @@ section h2 {
   font-size: 12px;
 }
 
-/* ================= LOGIN / SIGNUP ================= */
+/* LOGIN / SIGNUP  */
 
 .user {
   min-height: 80vh;
@@ -286,7 +318,7 @@ section h2 {
   background: #b8892e;
 }
 
-/* ================= PRODUCT DETAIL ================= */
+/*  PRODUCT DETAIL  */
 
 .product-detail {
   padding: 80px 60px;
@@ -341,7 +373,7 @@ section h2 {
   cursor: pointer;
 }
 
-/* ================= FOOTER ================= */
+/* FOOTER  */
 
 .footer {
   background: #ffe4ea;
@@ -351,7 +383,7 @@ section h2 {
   margin-top: 50px;
 }
 
-/* ================= MOBILE MENU ================= */
+/*  MOBILE MENU  */
 
 .menu-icon {
   display: none;
@@ -360,7 +392,7 @@ section h2 {
   cursor: pointer;
 }
 
-/* ================= TABLET ================= */
+/*  TABLET  */
 
 @media (max-width: 992px) {
   section {
@@ -376,7 +408,7 @@ section h2 {
   }
 }
 
-/* ================= MOBILE ================= */
+/* MOBILE  */
 
 @media (max-width: 768px) {
   .navbar {
@@ -415,7 +447,7 @@ section h2 {
   }
 }
 
-/* ================= SMALL PHONES ================= */
+/* SMALL PHONES */
 
 @media (max-width: 480px) {
   .product-main h1 {
@@ -431,7 +463,7 @@ section h2 {
   }
 }
 
-/* ================= SCROLL ANIMATION ================= */
+/*  SCROLL ANIMATION  */
 
 .reveal {
   opacity: 0;

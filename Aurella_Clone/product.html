@@ -40,11 +40,15 @@
     </section>
 
     <section class="search-section">
-      <input
-        type="text"
-        id="searchInput"
-        placeholder="Search products..."
-        onkeyup="searchProducts()" />
+      <div class="search-box">
+        <input
+          type="text"
+          id="searchInput"
+          placeholder="Search products..."
+          onkeyup="proSearch()" />
+
+        <div id="suggestions" class="suggestions"></div>
+      </div>
     </section>
 
     <section class="filter">
@@ -141,7 +145,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/facewash.jpg" />
+            <img src="./Pro-imgs/Skin-HydratingFaceWash.webp" />
             <h3>Hydrating Face Wash</h3>
           </a>
 
@@ -166,7 +170,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/hairoil.jpg" />
+            <img src="./Pro-imgs/GoldOil.webp" />
             <h3>Herbal Hair Oil</h3>
           </a>
 
@@ -183,7 +187,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/shampoo.jpg" />
+            <img src="./Pro-imgs/repair-shampoo.webp" />
             <h3>Repair Shampoo</h3>
           </a>
 
@@ -225,7 +229,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/summerdress.jpg" />
+            <img src="./Pro-imgs/summer dress.jpg" />
             <h3>Summer Dress</h3>
           </a>
 
@@ -250,7 +254,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/necklace.jpg" />
+            <img src="./Pro-imgs/Gold Necklace.jpg" />
             <h3>Gold Necklace</h3>
           </a>
 
@@ -267,7 +271,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/earrings.jpg" />
+            <img src="./Pro-imgs/Diamond Ear.png" />
             <h3>Diamond Earrings</h3>
           </a>
 
@@ -292,7 +296,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/handbag.jpg" />
+            <img src="./Pro-imgs/Designer Handbag.webp" />
             <h3>Luxury Handbag</h3>
           </a>
 
@@ -309,7 +313,7 @@
           <span class="wishlist" onclick="toggleWishlist(this)">❤️</span>
 
           <a href="product-detail.html">
-            <img src="./Pro-imgs/sunglasses.jpg" />
+            <img src="./Pro-imgs/glasses.avif" />
             <h3>Stylish Sunglasses</h3>
           </a>
 

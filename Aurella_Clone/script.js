@@ -1,4 +1,4 @@
-/* ================= PAGE LOAD ================= */
+/*  PAGE LOAD  */
 
 document.addEventListener("DOMContentLoaded", () => {
   revealOnScroll();
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/* ================= CART ================= */
+/*  CART */
 
 let cart = JSON.parse(localStorage.getItem("cart")) || [];
 
@@ -104,7 +104,7 @@ function checkout() {
   updateCart();
 }
 
-/* ================= NAV MENU ================= */
+/*  NAV MENU */
 
 function toggleMenu() {
   const nav = document.getElementById("navLinks");
@@ -118,7 +118,7 @@ function toggleMenu() {
   }
 }
 
-/* ================= SCROLL ANIMATION ================= */
+/*  SCROLL ANIMATION  */
 
 function revealOnScroll() {
   const reveals = document.querySelectorAll(".reveal");
@@ -135,7 +135,7 @@ function revealOnScroll() {
 
 window.addEventListener("scroll", revealOnScroll);
 
-/* ================= PRODUCT SEARCH ================= */
+/*  PRODUCT SEARCH  */
 
 function searchProducts() {
   const input = document.getElementById("searchInput").value.toLowerCase();
@@ -153,7 +153,7 @@ function searchProducts() {
   });
 }
 
-/* ================= FILTER ================= */
+/*  FILTER  */
 
 function filterProducts() {
   let category = document.getElementById("categoryFilter").value;
@@ -179,8 +179,99 @@ function filterProducts() {
     product.style.display = show ? "" : "none";
   });
 }
+// sample ratings (you can randomize or store in DB)
+function getRating() {
+  return (Math.random() * (5 - 3.5) + 3.5).toFixed(1);
+}
 
-/* ================= WISHLIST ================= */
+function proSearch() {
+  const input = document.getElementById("searchInput").value.toLowerCase();
+  const products = document.querySelectorAll(".product-card");
+  const suggestionBox = document.getElementById("suggestions");
+
+  suggestionBox.innerHTML = "";
+
+  let allProducts = [];
+
+  products.forEach((product) => {
+    const name = product.querySelector("h3").innerText;
+    const nameLower = name.toLowerCase();
+    const category = product.getAttribute("data-category");
+    const price = product.getAttribute("data-price");
+    const img = product.querySelector("img").src;
+
+    allProducts.push({ name, nameLower, category, price, img });
+
+    if (nameLower.includes(input) || category.includes(input)) {
+      product.style.display = "block";
+    } else {
+      product.style.display = "none";
+    }
+  });
+
+  // 🔥 TRENDING (when input empty)
+  if (input === "") {
+    suggestionBox.style.display = "block";
+
+    suggestionBox.innerHTML += `<div class="trending-title">🔥 Trending</div>`;
+
+    allProducts.slice(0, 5).forEach((item) => {
+      addSuggestion(item);
+    });
+
+    return;
+  }
+
+  // 🔍 SEARCH MATCHES
+  let matches = allProducts.filter(
+    (p) => p.nameLower.includes(input) || p.category.includes(input),
+  );
+
+  if (matches.length > 0) {
+    suggestionBox.style.display = "block";
+
+    matches.slice(0, 6).forEach((item) => {
+      addSuggestion(item);
+    });
+  } else {
+    suggestionBox.style.display = "none";
+  }
+}
+
+// reusable UI
+function addSuggestion(item) {
+  const suggestionBox = document.getElementById("suggestions");
+
+  const div = document.createElement("div");
+  div.classList.add("suggestion-item");
+
+  const rating = getRating();
+
+  div.innerHTML = `
+    <img src="${item.img}">
+    <div class="suggestion-info">
+      <span>${item.name}</span>
+      <span class="price">₹${item.price}</span>
+      <span class="rating">⭐ ${rating}</span>
+    </div>
+  `;
+
+  div.onclick = () => {
+    document.getElementById("searchInput").value = item.name;
+    suggestionBox.style.display = "none";
+    proSearch();
+  };
+
+  suggestionBox.appendChild(div);
+}
+
+// close dropdown
+document.addEventListener("click", (e) => {
+  if (!e.target.closest(".search-box")) {
+    document.getElementById("suggestions").style.display = "none";
+  }
+});
+/*  WISHLIST */
 
 let wishlist = JSON.parse(localStorage.getItem("wishlist")) || [];
 
@@ -214,7 +305,7 @@ function loadWishlist() {
   });
 }
 
-/* ================= PRODUCT DETAIL IMAGE ================= */
+/*  PRODUCT DETAIL IMAGE  */
 
 function changeProductImage(el) {
   const main = document.getElementById("mainImage");
