@@ -1,191 +1,136 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
+    <title>Aurella | Luxury Redefined</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css" />
 
-<title>Aurella | Luxury Redefined</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap"
+      rel="stylesheet" />
+  </head>
 
-<link rel="stylesheet" href="style.css">
+  <body>
+    <!-- NAVBAR -->
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+    <header class="navbar">
+      <div class="logo">
+        <a href="index.html">
+          <img src="aurella_logo_custom.svg" alt="Aurella Logo" />
+        </a>
+      </div>
 
-</head>
+      <div class="menu-icon" onclick="toggleMenu()">☰</div>
 
-<body>
+      <nav id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="#about">About</a>
+        <a href="#collection">Collections</a>
+        <a href="#guide">Guide</a>
+        <a href="#store">Store</a>
+        <a href="product.html">Products</a>
+        <a href="login.html">Login</a>
+        <a href="signup.html">Sign Up</a>
 
+        <div class="cart-icon">
+          🛒
+          <span id="cart-count">0</span>
+        </div>
+      </nav>
+    </header>
 
-<!-- NAVBAR -->
+    <!-- HERO SECTION -->
 
-<header class="navbar">
+    <section class="main">
+      <div class="hero-content reveal">
+        <h1>Luxury That Defines You</h1>
 
-<div class="logo">
-<a href="index.html">
-<img src="aurella_logo_custom.svg" alt="Aurella Logo">
-</a>
-</div>
+        <p>
+          Discover premium beauty, fashion, and accessories designed to
+          celebrate elegance and confidence.
+        </p>
 
-<div class="menu-icon" onclick="toggleMenu()">☰</div>
+        <div class="hero-buttons">
+          <a href="product.html" class="btn"> Explore Collection </a>
 
-<nav id="navLinks">
+          <a href="#collection" class="btn-outline"> View Collections </a>
+        </div>
+      </div>
+    </section>
 
-<a href="index.html">Home</a>
-<a href="#about">About</a>
-<a href="#collection">Collections</a>
-<a href="#guide">Guide</a>
-<a href="#store">Store</a>
-<a href="product.html">Products</a>
-<a href="login.html">Login</a>
-<a href="signup.html">Sign Up</a>
+    <!-- ABOUT -->
 
-<div class="cart-icon">
-🛒
-<span id="cart-count">0</span>
-</div>
+    <section id="about" class="about reveal">
+      <h2>About Aurella</h2>
 
-</nav>
+      <p>
+        Aurella is a luxury lifestyle brand created for women who value beauty,
+        confidence, and elegance. Our collections blend fashion, skincare, and
+        accessories to bring timeless sophistication.
+      </p>
+    </section>
 
-</header>
+    <!-- COLLECTION -->
 
+    <section id="collection" class="collection reveal">
+      <h2>Our Luxury Collections</h2>
 
+      <div class="cards">
+        <div class="card reveal slide-left">
+          <h3>Luxury Beauty</h3>
 
-<!-- HERO SECTION -->
+          <p>Premium skincare and makeup essentials.</p>
+        </div>
 
-<section class="hero">
+        <div class="card reveal">
+          <h3>Elegant Fashion</h3>
 
-<div class="hero-content reveal">
+          <p>Stylish outfits designed for modern elegance.</p>
+        </div>
 
-<h1>Luxury That Defines You</h1>
+        <div class="card reveal slide-right">
+          <h3>Premium Accessories</h3>
 
-<p>
-Discover premium beauty, fashion, and accessories designed
-to celebrate elegance and confidence.
-</p>
+          <p>Handbags, jewellery and lifestyle essentials.</p>
+        </div>
+      </div>
+    </section>
 
-<div class="hero-buttons">
+    <!-- GUIDE -->
 
-<a href="product.html" class="btn">
-Explore Collection
-</a>
+    <section id="guide" class="guide reveal">
+      <h2>Beauty & Style Guide</h2>
 
-<a href="#collection" class="btn-outline">
-View Collections
-</a>
+      <p>
+        Explore skincare routines, makeup techniques, and fashion styling tips
+        curated by Aurella experts.
+      </p>
+    </section>
 
-</div>
+    <!-- STORE -->
 
-</div>
+    <section id="store" class="store reveal">
+      <h2>Experience Aurella</h2>
 
-</section>
+      <p>
+        Explore our online store and discover premium beauty and fashion crafted
+        with elegance.
+      </p>
 
+      <a href="product.html" class="btn"> Shop Now </a>
+    </section>
 
+    <!-- FOOTER -->
 
-<!-- ABOUT -->
+    <footer class="footer">
+      <p>© 2026 Aurella. All Rights Reserved.</p>
 
-<section id="about" class="about reveal">
+      <p>Luxury Beauty • Elegant Fashion • Premium Lifestyle</p>
+    </footer>
 
-<h2>About Aurella</h2>
-
-<p>
-Aurella is a luxury lifestyle brand created for women who value
-beauty, confidence, and elegance. Our collections blend fashion,
-skincare, and accessories to bring timeless sophistication.
-</p>
-
-</section>
-
-
-
-<!-- COLLECTION -->
-
-<section id="collection" class="collection reveal">
-
-<h2>Our Luxury Collections</h2>
-
-<div class="cards">
-
-<div class="card reveal slide-left">
-
-<h3>Luxury Beauty</h3>
-
-<p>Premium skincare and makeup essentials.</p>
-
-</div>
-
-
-<div class="card reveal">
-
-<h3>Elegant Fashion</h3>
-
-<p>Stylish outfits designed for modern elegance.</p>
-
-</div>
-
-
-<div class="card reveal slide-right">
-
-<h3>Premium Accessories</h3>
-
-<p>Handbags, jewellery and lifestyle essentials.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-
-<!-- GUIDE -->
-
-<section id="guide" class="guide reveal">
-
-<h2>Beauty & Style Guide</h2>
-
-<p>
-Explore skincare routines, makeup techniques,
-and fashion styling tips curated by Aurella experts.
-</p>
-
-</section>
-
-
-
-<!-- STORE -->
-
-<section id="store" class="store reveal">
-
-<h2>Experience Aurella</h2>
-
-<p>
-Explore our online store and discover premium beauty
-and fashion crafted with elegance.
-</p>
-
-<a href="product.html" class="btn">
-Shop Now
-</a>
-
-</section>
-
-
-
-<!-- FOOTER -->
-
-<footer class="footer">
-
-<p>© 2026 Aurella. All Rights Reserved.</p>
-
-<p>Luxury Beauty • Elegant Fashion • Premium Lifestyle</p>
-
-</footer>
-
-
-
-<script src="script.js"></script>
-
-</body>
-
+    <script src="script.js"></script>
+  </body>
 </html>
